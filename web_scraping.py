@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import re
 
-def get_phone():
-    url = 'https://www.tripadvisor.com/Restaurant_Review-g187514-d15364769-Reviews-La_Gaditana_Castellana-Madrid.html'
+#gets the phone of each restaurant using web scraping.
+def get_phone(url):
+    
     res = requests.get(url).text
     soup = BeautifulSoup(res, 'html.parser')
     telephone = soup.find('body').text
