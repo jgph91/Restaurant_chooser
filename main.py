@@ -15,7 +15,6 @@ def main():
     #getting the dataframe with the 5 restaurant with the best restaurants that meet the tag given.
     result = clean_db(args.city,args.tag)
     print('Search completed, looking for the phone numbers...')
-
     # list for appending the phones and for adding it to the dataframe
     phone_list = []
     #getting the phones of restaurant via web scraping
@@ -64,8 +63,7 @@ def main():
     result['Range_Price'] = range_price_list
 
     print('These are the best restaurants in {} for {} food:'.format(args.city,args.tag))
-    result = result[['Name', 'City','Rating','Tag1','Tag2','Tag3',
-    'Tag4','Tag5','Phone_numbers','Range_Price']]
+    result = result[['Name', 'City','Rating','Tag1','Tag2','Tag3','Tag4','Tag5','Phone_numbers','Range_Price']]
     print(result)
     print('Creating pdf version...')
     pdf_creator(result)

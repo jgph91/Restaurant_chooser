@@ -5,11 +5,11 @@ def pdf_creator(table):
     pdf.add_page('L')
     epw = pdf.w - 2*pdf.l_margin
     col_width = epw/10
-    th = pdf.font_size
-    #title
     pdf.set_font('Times','B',14.0) 
+    th = pdf.font_size
+    #title 
     pdf.cell(epw, 0.0, 'Best restaurants', align='C')
-    pdf.set_font('Times','',10.0) 
+    pdf.set_font('Times','',12.0) 
     pdf.ln(1)
 
     #creating the columns
@@ -26,7 +26,7 @@ def pdf_creator(table):
     
     #filling the table
     pdf.ln(th+1)
-    pdf.set_font('Arial', '', 7)
+    pdf.set_font('Arial', '', 8)
     for i in range(len(table['City'])):     
         name = table['Name'].iloc[i]
         city = table['City'].iloc[i]

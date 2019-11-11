@@ -20,28 +20,28 @@ def get_phone(url,city):
             telephone = re.findall(r'\+[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+',telephone)[0]
             return telephone
         except:
-            return 'Phone number not found' 
+            return 'Not found' 
     
     elif city in city_5:
         try:
             telephone = re.findall(r'\+[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+',telephone)[0]
             return telephone
         except:
-            return 'Phone number not found'
+            return 'Not found'
 
     elif city in city_4:
         try:
             telephone = re.findall(r'\+[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+',telephone)[0]
             return telephone
         except:
-            return 'Phone number not found'
+            return 'Not found'
 
     elif city in city_3:
         try:
             telephone = re.findall(r'\+[0-9]+\s[0-9]+\s[0-9]+',telephone)[0]
             return telephone
         except:
-            return 'Phone number not found'
+            return 'Not found'
 
 def range_price(url):
     
@@ -58,5 +58,5 @@ def range_price(url):
 
     except:
 
-        return 'Range price not found.'
+        return 'Not found.'
 
