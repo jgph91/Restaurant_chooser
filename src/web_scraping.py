@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 import re
 
 #gets the phone of each restaurant using web scraping.
