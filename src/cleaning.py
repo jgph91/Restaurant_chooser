@@ -52,6 +52,7 @@ def clean_db(city,tag):
 
         result = query(city,tag)
         result = result.head(5) # give back the 5 ones with highest rating and number of reviews
-        
+        #reseting the index of the results dataframe
+        result = result.reset_index() 
         return result
 

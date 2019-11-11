@@ -2,6 +2,7 @@ import argparse
 import pandas as pd 
 from src.cleaning import clean_db
 from src.web_scraping import get_phone,range_price
+from src.pdf import pdf_creator
 
 def parse():
     parser = argparse.ArgumentParser() 
@@ -13,10 +14,6 @@ def main():
     args  = parse()
     #getting the dataframe with the 5 restaurant with the best restaurants that meet the tag given.
     result = clean_db(args.city,args.tag)
-
-    #reseting the index of the results dataframe
-    result = result.reset_index() 
-
     print('Search completed, looking for the phone numbers...')
 
     # list for appending the phones and for adding it to the dataframe
@@ -38,7 +35,7 @@ def main():
     phone_4 = get_phone(url_4,args.city)
     phone_list.append(phone_4)
 
-    url_5 = result.loc[0]['URL_TA']
+    url_5 = result.loc[4]['URL_TA']
     phone_5 = get_phone(url_5,args.city)
     phone_list.append(phone_5)
 
@@ -67,9 +64,12 @@ def main():
     result['Range_Price'] = range_price_list
 
     print('These are the best restaurants in {} for {} food:'.format(args.city,args.tag))
-    result = result[['Name', 'City', 'Rating','Tag1','Tag2','Tag3',
-    'Tag4','Tag5','Phone_numbers','Range_Price','URL_TA']]
+    result = result[['Name', 'City','Rating','Tag1','Tag2','Tag3',
+    'Tag4','Tag5','Phone_numbers','Range_Price']]
     print(result)
+    print('Creating pdf version...')
+    pdf_creator(result)
+    print('Ready! pdf saved in output folder.')
 
 if __name__ == '__main__':
     main()

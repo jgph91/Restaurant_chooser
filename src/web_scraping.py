@@ -52,6 +52,8 @@ def range_price(url):
     try:
 
         range_price = re.findall(r'€[0-9]+\s\-\s€[0-9]+',body)[0]
+        range_price = re.sub(r'€',"",range_price)
+        range_price += " euros"
         return range_price
 
     except:
