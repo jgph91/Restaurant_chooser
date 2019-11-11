@@ -18,13 +18,12 @@ def clean_db(city,tag):
         df = df.rename(columns={"Cuisine Style":"tag"})
         df['URL_TA'] = df['URL_TA'].apply(lambda x: 'https://www.tripadvisor.com' + x)
 
-
         df['Rating']= df['Rating'].fillna('Unknown')
         df['Rating'] = df['Rating'].apply(rating_cleaner) #give the 'unknown' tag to incorrect values.
         df = df[(df['Rating'] != 'Unknown')] #taking out the 'unknown' rating from the main dataframe. 
         df = df.sort_values(['Rating','Number of Reviews'],ascending = [False,False])#sorting restaurants by rating and number of reviews
 
-                #formating the tag column spliting it in new columns, in order to asign a tag for each column, for this task I had to create a new dataframe joining all the tags.
+         #formating the tag column spliting it in new columns, in order to asign a tag for each column, for this task I had to create a new dataframe joining all the tags.
         df2= df['tag'].str.split(',',n = 7, expand = True)
         df2 = df2.rename(columns={0:'tag1',1:'tag2',2:'tag3',3:'tag4',4:'tag5',5:'tag6'})
 
@@ -38,7 +37,7 @@ def clean_db(city,tag):
 
         #merging both dataframes into a single one
         df = pd.concat([df,df2],axis=1)
-        #selecting the columns for the final dataframe
+        #selecting the columns for the final dataframe, 'tag6' dropped because it contains a list of the remaining tags
         df = df[['Name', 'City', 'Rating','URL_TA',
                 'tag1','tag2','tag3','tag4','tag5']]
 
@@ -53,7 +52,7 @@ def clean_db(city,tag):
                 return query
 
         result = query(city,tag)
-        result = result.head(5)
-        print(set(df['City']))
+        result = result.head(5) # give back the 5 ones with highest rating and number of reviews
+        
         return result
 

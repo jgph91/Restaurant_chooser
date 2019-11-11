@@ -5,18 +5,17 @@ from bs4 import BeautifulSoup
 import re
 from src.functions import rating_cleaner,tag_converter
 from src.cleaning import clean_db
-from src.web_scraping import get_phone
-
+from src.web_scraping import get_phone,range_price
 
 """parser = argparse.ArgumentParser(description= 'Enter the city and a tag for looking for restaurants.')
 parser.add_argument()"""
 
-print()
 print('Enter the city and a tag for looking for the best restaurants.')
 #getting the dataframe with the 5 restaurant with the best restaurants that meet the tag given.
 
-city = 'Athens'
-tag = 'Mediterranean'
+city = 'Madrid'
+tag = 'Gastropub'
+
 
 result = clean_db(city,tag)
 
@@ -25,9 +24,9 @@ result = result.reset_index()
 
 print('Search completed, looking for the phone numbers...')
 
-# list for appending the phones and for merging with the dataframe
+# list for appending the phones and for adding it to the dataframe
 phone_list = []
-
+#getting the phones of restaurant via web scraping
 url_1 = result.loc[0]['URL_TA']
 phone_1 = get_phone(url_1,city)
 phone_list.append(phone_1)
@@ -48,38 +47,33 @@ url_5 = result.loc[0]['URL_TA']
 phone_5 = get_phone(url_5,city)
 phone_list.append(phone_5)
 
-print('Phone numbers found!')
+
 result['Phone_numbers'] = phone_list
+
+print('Phone numbers found, getting range prices...')
+
+# list for appending the phones and for adding it to the dataframe
+range_price_list = []
+#getting the phones of restaurant via web scraping
+range_price_1 = range_price(url_1)
+range_price_list.append(range_price_1)
+
+range_price_2 = range_price(url_2)
+range_price_list.append(range_price_2)
+
+range_price_3 = range_price(url_3)
+range_price_list.append(range_price_3)
+
+range_price_4 = range_price(url_4)
+range_price_list.append(range_price_4)
+
+range_price_5 = range_price(url_5)
+range_price_list.append(range_price_5)
+
+result['Range_Price'] = range_price_list
 
 print('These are the best restaurants in {} for {} food:'.format(city,tag))
 print(result)
-#print(len(phone_list))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -103,3 +97,29 @@ print(result)
 
 
 """if __name__ == '__main__':"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
