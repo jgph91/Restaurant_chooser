@@ -3,6 +3,7 @@ import pandas as pd
 from src.cleaning import clean_db
 from src.web_scraping import get_phone,range_price
 from src.pdf import pdf_creator
+from src.mail import mail_sender
 
 def parse():
     parser = argparse.ArgumentParser() 
@@ -61,13 +62,20 @@ def main():
     range_price_list.append(range_price_5)
     #adding range prices to main dataframe
     result['Range_Price'] = range_price_list
-
+    #printing the result in terminal
     print('These are the best restaurants in {} for {} food:'.format(args.city,args.tag))
     result = result[['Name', 'City','Rating','Tag1','Tag2','Tag3','Tag4','Tag5','Phone_numbers','Range_Price']]
     print(result)
+
     print('Creating pdf version...')
     pdf_creator(result)
     print('Ready! pdf saved in output folder.')
+    #sendin the pdf mail if you want to
+    mailing = input('Doy you want to receive the pdf via mail?(Y/N)')
+    if mailing == "Y":
+        mail_sender()
+    else:
+        print('Bon appétit!')
 
 if __name__ == '__main__':
     main()

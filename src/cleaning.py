@@ -47,7 +47,7 @@ def clean_db(city,tag):
                 (df['City'] == city) & ((df['Tag1'] == tag) | (df['Tag2'] == tag) | 
                 (df['Tag3'] == tag) | (df['Tag4'] == tag) | (df['Tag5'] == tag))
                 )]
-
+                
                 return query
 
         result = query(city,tag)

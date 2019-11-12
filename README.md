@@ -14,3 +14,4 @@ src/cleaning.py -> returns the formated database
 src/functions.py -> additional functions for cleaning the database  
 src/web_scraping.py -> web scraping fucntions for getting phones and range prices  
 src/pdf.py -> function for printing out the results in pdf  
+src/mail.py -> function for sending the pdf via mail  
