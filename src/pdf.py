@@ -12,7 +12,7 @@ def pdf_creator(table):
     pdf.set_font('Times','',12.0) 
     pdf.ln(1)
 
-    #creating the columns
+    #creating the header
     pdf.cell(col_width, th+1, 'Name', align='C', border = 1)
     pdf.cell(col_width, th+1, 'City', align='C', border = 1)
     pdf.cell(col_width, th+1, 'Rating', align='C', border = 1)
@@ -22,9 +22,10 @@ def pdf_creator(table):
     pdf.cell(col_width, th+1,'Tag4', align='C', border = 1)
     pdf.cell(col_width, th+1, 'Tag5', align='C', border = 1)
     pdf.cell(col_width, th+1,'Phone_numbers', align='C', border = 1)
-    pdf.cell(col_width, th+1, 'Range_Price', align='C', border = 1)                                              
+    pdf.cell(col_width, th+1, 'Range_Price', align='C', border = 1)
+                                                   
     
-    #filling the table
+    #getting the data from the dataframe
     pdf.ln(th+1)
     pdf.set_font('Arial', '', 8)
     for i in range(len(table['City'])):     
@@ -38,6 +39,7 @@ def pdf_creator(table):
         tag5 = table['Tag5'].iloc[i]
         phone_numbers = str(table['Phone_numbers'].iloc[i])
         range_price = str(table['Range_Price'].iloc[i])
+        #filling the table
         pdf.cell(col_width, th+1, '%s' % (name), align='C', border = 1)
         pdf.cell(col_width, th+1, '%s' % (city), align='C', border = 1)
         pdf.cell(col_width, th+1, '%s' % (rating), align='C', border = 1)
@@ -49,6 +51,10 @@ def pdf_creator(table):
         pdf.cell(col_width, th+1, '%s' % (phone_numbers), align='C', border = 1)
         pdf.cell(col_width, th+1, '%s' % (range_price), align='C', border = 1)
         
+        
         pdf.ln(th+1)
+
+    #pdf.image('./pictures.png',59,50,9,8,'PNG')
+
         
     pdf.output('./output/Best_restaurants')# pdf saved in output folder

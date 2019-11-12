@@ -74,6 +74,7 @@ def main():
     mailing = input('Doy you want to receive the pdf via mail?(Y/N)')
     if mailing == "Y":
         mail_sender()
+        print('Bon appétit!')
     else:
         print('Bon appétit!')
 

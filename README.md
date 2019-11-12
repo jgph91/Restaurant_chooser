@@ -15,3 +15,5 @@ src/functions.py -> additional functions for cleaning the database
 src/web_scraping.py -> web scraping fucntions for getting phones and range prices  
 src/pdf.py -> function for printing out the results in pdf  
 src/mail.py -> function for sending the pdf via mail  
+input/TA_restaurants_curated.csv -> csv file with the data from trip advisor  
+output/Best_restaurants -> pdf containing the results of your query in a table  
