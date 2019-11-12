@@ -5,7 +5,7 @@ def pdf_creator(table):
     pdf.add_page('L')
     epw = pdf.w - 2*pdf.l_margin
     col_width = epw/10
-    pdf.set_font('Times','B',14.0) 
+    pdf.set_font('Times','B',18.0) 
     th = pdf.font_size
     #title 
     pdf.cell(epw, 0.0, 'Best restaurants', align='C')
@@ -53,8 +53,8 @@ def pdf_creator(table):
         
         
         pdf.ln(th+1)
+    #picture Bon appétit!
+    pdf.image('./src/pictures.png',10,13,9,8,'PNG')
 
-    #pdf.image('./pictures.png',59,50,9,8,'PNG')
-
-        
+    #pdf location
     pdf.output('./output/Best_restaurants')# pdf saved in output folder
