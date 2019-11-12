@@ -9,7 +9,7 @@ def get_phone(url,city):
     city_6 = ['Lyon','Paris']
     city_5 = ['Barcelona','Geneva','Copenhagen','Zurich','Madrid','Brussels','Stockholm','Oslo','Warsaw']
     city_4 = ['Lisbon','Rome','Luxembourg','Budapest','Dublin','Ljubljana','Bratislava','London','Athens','Edinburgh','Krakow','Oporto','Milan','Prague']
-    city_3 = ['Helsinki','Berlin','Vienna','Hamburg','Munich']
+    city_3 = ['Helsinki','Berlin','Vienna','Hamburg','Munich','Amsterdam']
 
     res = requests.get(url).text
     soup = BeautifulSoup(res, 'html.parser')
