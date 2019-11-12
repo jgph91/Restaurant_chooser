@@ -54,7 +54,7 @@ def pdf_creator(table):
         
         pdf.ln(th+1)
     #picture Bon appétit!
-    pdf.image('./src/pictures.png',10,13,9,8,'PNG')
+    pdf.image('./src/pictures.png',10,12,9,8,'PNG')
 
     #pdf location
     pdf.output('./output/Best_restaurants')# pdf saved in output folder
