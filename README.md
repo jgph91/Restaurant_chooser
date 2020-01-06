@@ -1,6 +1,6 @@
 # Where do we eat?
 
-<a href="https://github.com/jgph91"><img src="./input/food.jpeg" title="Food variety" alt="Food variety"></a>
+<a href="https://github.com/jgph91"><img align:center src="./input/food.jpeg" title="Food variety" alt="Food variety"></a>
 <!-- [![Best restaurants](./input/food.jpeg)](https://github.com/jgph91) -->
 
 Where do we eat its a program that recommends you the best five restaurants based on your tastes and on your location. Also it's possible to receive this recommendations in a pdf via email
