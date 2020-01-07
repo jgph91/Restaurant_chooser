@@ -8,11 +8,13 @@ from email.mime.text import MIMEText
 
 
 def mail_sender():
+    '''Send the mail with the pdf attached to the specified mail'''
+
     subject = "Best restaurants"
-    body = "Find attached the pdf with the best restaurantants"
-    sender_email = "jgph91@gmail.com"
-    receiver_email = "jgph91@gmail.com"
-    password = getpass.getpass("Insert your mail password: ")
+    body = "Find attached the pdf with the best restaurants"
+    sender_email = "wheredoweeat91@gmail.com"
+    receiver_email = input(str('Insert your mail please: '))
+    password = 'datadata'
 
     # Create a multipart message and set headers
     message = MIMEMultipart()

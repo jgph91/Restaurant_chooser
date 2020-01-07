@@ -1,9 +1,8 @@
 import pandas as pd
 from src.functions import rating_cleaner,tag_converter
 
-#Getting the databasfrom the csv file.
-
 def clean_db(city,tag):
+        '''It returns the cleaned dataset''' 
  
         database = pd.read_csv("./input/TA_restaurants_curated.csv")
         df = pd.DataFrame(database)
@@ -13,8 +12,9 @@ def clean_db(city,tag):
         df = df[['Name', 'City', 'Cuisine Style', 
                 'Rating','URL_TA','Number of Reviews'
                 ]]
-
         df = df.rename(columns={"Cuisine Style":"tag"})
+
+        #completing the TA URL
         df['URL_TA'] = df['URL_TA'].apply(lambda x: 'https://www.tripadvisor.com' + x)
 
         df['Rating']= df['Rating'].fillna('Unknown')
@@ -40,8 +40,9 @@ def clean_db(city,tag):
         df = df[['Name', 'City', 'Rating','URL_TA',
                 'Tag1','Tag2','Tag3','Tag4','Tag5']]
 
-        #query function
+       
         def query(city,tag):
+                '''Returns the 5 best restaurants according to the city and the specified tag''' 
                 
                 query = df[(
                 (df['City'] == city) & ((df['Tag1'] == tag) | (df['Tag2'] == tag) | 
