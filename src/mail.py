@@ -9,9 +9,9 @@ from email.mime.text import MIMEText
 
 def mail_sender():
     '''Send the mail with the pdf attached to the specified mail'''
-
-    subject = "Best restaurants"
-    body = "Find attached the pdf with the best restaurants"
+    
+    subject = "So where do we eat recommends you..."
+    body = "Find attached the pdf with the best restaurants according your choice"
     sender_email = "wheredoweeat91@gmail.com"
     receiver_email = input(str('Insert your mail please: '))
     password = 'datadata'
