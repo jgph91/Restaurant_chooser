@@ -7,8 +7,10 @@ So where do we eat its a program that recommends you the best five restaurants b
 
 ## Instructions
 
-Open your teminal and move to the desired location then clone this repository using the following command: git clone https://github.com/jgph91/So-where-do-we-eat
-In the terminal type python3 main.py 'City' 'Tag', you have all the available cities and tags in the following section.
+Open your teminal and move to the desired location then clone this repository using the following command: git clone https://github.com/jgph91/So-where-do-we-eat  
+
+In the terminal type python3 main.py 'City' 'Tag', you have all the available cities and tags in the following section.  
+i.e: python3 main.py Madrid Italian
 
 ## Available options
 
@@ -18,10 +20,10 @@ These are the tags availables: 'Cajun & Creole', 'Central European', 'Soups', 'V
 
 ## Technologies
 
-This program has been developed using Python, it uses argparse to receive the parameters city and tag from the terminal.
-For cleaning the 'original dataset' <a href="https://www.kaggle.com/damienbeneschi/krakow-ta-restaurans-data-raw">"original dataset"</a> I used pandas, it also included in the iput folder of this repository.
-The telephone numbers and the range of prices were got from the <a href="https://www.tripadvisor.com">"TA web"</a> using beautiful soup.
-The pdf with all the data was created using the pfpf library.
+This program has been developed using Python, it uses argparse to receive the parameters city and tag from the terminal.  
+For cleaning the 'original dataset' <a href="https://www.kaggle.com/damienbeneschi/krakow-ta-restaurans-data-raw">original dataset</a> I used pandas, it also included in the iput folder of this repository.  
+The telephone numbers and the range of prices were got from the <a href="https://www.tripadvisor.com">TA web</a> using beautiful soup.  
+The pdf with all the data was created using the pfpf library.  
 
 ## Program files
 
@@ -40,4 +42,4 @@ The pdf with all the data was created using the pfpf library.
 If you have any doubt please don't heisitate to contact with me:
 
 - email : jgph91@gmail.com
-- linkedin:  <a href="https://www.linkedin.com/in/javier-gomez-del-pulgar/?locale=en_US">"Javier Gómez del Pulgar"</a>
+- linkedin:  <a href="https://www.linkedin.com/in/javier-gomez-del-pulgar/?locale=en_US">Javier Gómez del Pulgar</a>
