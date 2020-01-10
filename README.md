@@ -7,10 +7,10 @@ So where do we eat its a program that recommends you the best five restaurants b
 
 ## Instructions
 
-Open your teminal and move to the desired location then clone this repository using the following command: `git clone https://github.com/jgph91/So-where-do-we-eat´   
+Open your teminal and move to the desired location then clone this repository using the following command: `git clone https://github.com/jgph91/So-where-do-we-eat`   
 
 In the terminal type python3 main.py 'City' 'Tag', you have all the available cities and tags in the following section.  
-i.e: `python3 main.py Madrid Italian´
+i.e: `python3 main.py Madrid Italian`
 
 ## Available options
 
