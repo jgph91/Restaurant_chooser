@@ -20,10 +20,10 @@ These are the tags availables: 'Cajun & Creole', 'Central European', 'Soups', 'V
 
 ## Technologies
 
-This program has been developed using Python, it uses argparse to receive the parameters city and tag from the terminal.
-For cleaning the 'original dataset' <a href="https://www.kaggle.com/damienbeneschi/krakow-ta-restaurans-data-raw">original dataset</a> I used pandas, it also included in the iput folder of this repository.
-The telephone numbers and the range of prices were got from the <a href="https://www.tripadvisor.com">TA web</a> using beautiful soup.
-The pdf with all the data was created using the pfpf library.
+. This program uses argparse to receive the parameters city and tag from the terminal.   
+. For cleaning the 'original dataset' <a href="https://www.kaggle.com/damienbeneschi/krakow-ta-restaurans-data-raw">original dataset</a> I used pandas, it also included in the iput folder of this repository.  
+. The telephone numbers and the range of prices were got from the <a href="https://www.tripadvisor.com">TA web</a> using beautiful soup.  
+. The pdf with all the data was created using the pfpf library.  
 
 ## Program files
 
