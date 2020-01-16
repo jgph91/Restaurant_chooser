@@ -37,13 +37,11 @@ def main():
     print('Creating the pdf file...')
     pdf_creator(result)
     print('Ready! pdf saved in output folder.')
-    #sendin the pdf mail if you want to
-    mailing = input('Doy you want to receive the pdf in your mail?(Y/N)')
-    if mailing == "Y" or 'y':
-        mail_sender()
-        print('Bon appétit!')
-    else:
-        print('Bon appétit!')
+
+    #sending the pdf to your mail mail if you want to
+    mail_sender()
+    print('Email sent! Bon appétit! ')
+
 
 if __name__ == '__main__':
     main()
