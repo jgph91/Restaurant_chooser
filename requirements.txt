@@ -1,7 +1,7 @@
 beautifulsoup4==4.8.1
 bs4==0.0.1
 fpdf==1.7.2
-numpy==1.18.0
+numpy==1.22.0
 pandas==0.25.3
 requests==2.20.0
 
