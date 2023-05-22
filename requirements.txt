@@ -3,5 +3,5 @@ bs4==0.0.1
 fpdf==1.7.2
 numpy==1.18.0
 pandas==0.25.3
-requests==2.20.0
+requests==2.31.0
 
